@@ -45,9 +45,11 @@ admin-robot-ui/
 - **Navbar + Sidebar** : navigation instantanée entre modules + filtres (catégorie, langue, utilisateur).
 - **FAQManager** : upload/modif/suppression de documents, annotations locales, recherche instantanée et test de pertinence FAISS.
 - **VoiceTester** : choix langue/voix Edge-TTS, génération audio, commandes Play/Stop/Save.
+- **Live Conversation** : simule un chat type ChatGPT/Gemini (mode RAG ou LLM Libre), responsive, plein écran, texte + voix, lecture auto TTS.
 - **Audios & Salutations** : dépôt d'hymnes/salutations, filtre par langue, planification locale de messages contextuels + préécoute TTS (Play/Stop/Enregistrer comme dans l’onglet Voix).
 - **Paramètres** : formulaires dialogue/voix/réseau. Si `/settings/*` n'est pas exposé, les valeurs sont sauvegardées localement (via `/capabilities`/`/health`) puis poussées dès que `rag_server_voice.py` est disponible.
 - **Journal** : filtre par module + plage de dates, respect du filtre utilisateur global (catégorie/utilisateur/langue).
+- **PWA** : manifest + service worker intégrés pour installer l’interface sur mobile/desktop et bénéficier d’un cache offline.
 
 ## Build & déploiement (Pi 5)
 

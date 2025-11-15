@@ -4,6 +4,7 @@ import { useFilters } from '../context/Filters';
 const modules = [
   { id: 'faq', label: 'Gestion FAQ / RAG' },
   { id: 'voice', label: 'Test Voix & RAG' },
+  { id: 'live', label: 'Live Conversation' },
   { id: 'greetings', label: 'Audios & Salutations' },
   { id: 'settings', label: 'Paramètres' },
   { id: 'history', label: 'Journal des actions' }

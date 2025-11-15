@@ -399,6 +399,18 @@ def get_metrics_snapshot():
 print("🔄 Chargement des documents personnalisés...")
 load_custom_documents()
 
+def format_response_text(text: str) -> str:
+    """Nettoie les réponses pour supprimer le markdown et les bullets bruts"""
+    if not text:
+        return ""
+    clean = text.replace("**", " ").replace("__", " ")
+    clean = re.sub(r"\*(?!\d)([^*]+)\*", r"\1", clean)
+    clean = re.sub(r"(?m)^\s*-\s+", "• ", clean)
+    clean = re.sub(r"\s+\n", "\n", clean)
+    clean = re.sub(r"\n{3,}", "\n\n", clean)
+    clean = re.sub(r"[ \t]{2,}", " ", clean)
+    return clean.strip()
+
 def _remove_segments_for_document(doc_id: str):
     global custom_segments
     if not custom_segments:
@@ -785,19 +797,19 @@ def generate_response(question: str, passages: list, language: str = "fr"):
                 "audio_id": audio_id,
                 "transcription": audio_info['transcription'],
                 "description": audio_info['description'],
-                "text": f"🎵 Voici l'hymne national du Burkina Faso en {audio_info['langue']}."
+                "text": format_response_text(f"🎵 Voici l'hymne national du Burkina Faso en {audio_info['langue']}.")
             }
         else:
             # Fallback texte si audio non disponible
             hymne_data = local_facts["hymne"]
             if language in hymne_data:
-                return {"type": "text", "text": f"Voici l'hymne national du Burkina Faso, Le Ditanyé:\n\n{hymne_data[language]}"}
+                return {"type": "text", "text": format_response_text(f"Voici l'hymne national du Burkina Faso, Le Ditanyé:\n\n{hymne_data[language]}")}
             else:
-                return {"type": "text", "text": f"Voici l'hymne national du Burkina Faso, Le Ditanyé:\n\n{hymne_data['francais']}"}
+                return {"type": "text", "text": format_response_text(f"Voici l'hymne national du Burkina Faso, Le Ditanyé:\n\n{hymne_data['francais']}")}
 
     # 2. Président
     if any(word in q_lower for word in ["président", "president", "chef d'état", "chef de l'état"]):
-        return {"type": "text", "text": local_facts["president"]}
+        return {"type": "text", "text": format_response_text(local_facts["president"])}
 
     # 3. Salutations
     if any(word in q_lower for word in ["bonjour", "salut", "comment ça va", "bonsoir", "merci", "au revoir"]):
@@ -809,7 +821,7 @@ def generate_response(question: str, passages: list, language: str = "fr"):
                     response += f"• {key.capitalize()}: {', '.join(value)}\n"
                 else:
                     response += f"• {key.capitalize()}: {value}\n"
-            return {"type": "text", "text": response}
+            return {"type": "text", "text": format_response_text(response)}
 
     # 4. Numéros utiles Orange
     if any(word in q_lower for word in ["numéro", "numero", "appeler", "contacter", "téléphone", "telephone", "ussd", "code"]):
@@ -823,7 +835,7 @@ def generate_response(question: str, passages: list, language: str = "fr"):
         response += f"• Recharger: {nums['codes_ussd']['recharge']}\n"
         response += f"• Transfert crédit: {nums['codes_ussd']['transfert_credit']}\n"
         response += f"• Connaître votre numéro: {nums['codes_ussd']['numero_orange']}\n"
-        return {"type": "text", "text": response}
+        return {"type": "text", "text": format_response_text(response)}
 
     # SI PAS DE CONNAISSANCE LOCALE, CONTINUER AVEC RAG
     context = "\n\n".join(passages)
@@ -869,6 +881,7 @@ Question: {question}"""
         )
 
         response_text = chat_completion.choices[0].message.content.strip()
+        response_text = format_response_text(response_text)
         return {"type": "text", "text": response_text}
 
     except Exception as e:
@@ -1018,6 +1031,9 @@ def text_ask(request: TextQuestion):
     response_data = generate_response(question, passages, request.language)
 
     # Ajouter les métadonnées
+    if response_data.get("type") == "text" and response_data.get("text"):
+        response_data["text"] = format_response_text(response_data["text"])
+
     result = {
         **response_data,
         "question": question,

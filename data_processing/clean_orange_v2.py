@@ -53,6 +53,24 @@ def clean_text_for_tts(text):
     # Supprime balises HTML
     text = re.sub(r"<[^>]+>", " ", text)
 
+    # Supprime le gras/italique markdown (**texte**, __texte__)
+    text = text.replace("**", " ").replace("__", " ")
+
+    # Normalise les bullets Markdown / listes
+    # Remplace "- item" par une phrase indépendante
+    text = re.sub(r"(\s|^)-\s+(?=[A-Za-zÀ-ÿ0-9])", ". ", text)
+    # Remplace ": -" (titre suivi de bullet) par ": "
+    text = re.sub(r":\s*-\s+", ": ", text)
+
+    # Retire les majuscules collées aux deux-points (SONABEL :... -> SONABEL: ...)
+    text = re.sub(r"\s+:\s*", ": ", text)
+
+    # Supprime les doubles espaces créés par les remplacements
+    text = re.sub(r"\s+", " ", text).strip()
+
+    # Supprime les shields Markdown restants type `*texte*` (mais préserve *144#)
+    text = re.sub(r"\*(?!\d)([^*]+?)\*", r"\1", text)
+
     # Normalise espaces multiples
     text = re.sub(r"\s+", " ", text).strip()
 

@@ -66,6 +66,26 @@ export const api = {
     });
     const blob = await res.blob();
     return blob;
+  },
+  voiceAsk: (formData) =>
+    request('/voice/ask', {
+      method: 'POST',
+      body: formData
+    }),
+  simpleAsk: (question) =>
+    request('/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question })
+    }),
+  transcribeAudio: (file, language = 'fr') => {
+    const formData = new FormData();
+    formData.append('file', file, 'message.webm');
+    formData.append('language', language);
+    return request('/transcribe', {
+      method: 'POST',
+      body: formData
+    });
   }
 };
 

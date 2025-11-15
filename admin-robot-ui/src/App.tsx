@@ -7,6 +7,7 @@ import UserGreetings from './components/UserGreetings';
 import Settings from './components/Settings';
 import ChatHistory from './components/ChatHistory';
 import Dashboard from './components/Dashboard';
+import LiveChat from './components/LiveChat';
 import { api } from './services/api';
 
 interface MetricsResponse {
@@ -71,6 +72,7 @@ const App = () => {
           )}
           {activeModule === 'faq' && <FAQManager />}
           {activeModule === 'voice' && <VoiceTester />}
+          {activeModule === 'live' && <LiveChat />}
           {activeModule === 'greetings' && <UserGreetings />}
           {activeModule === 'settings' && <Settings />}
           {activeModule === 'history' && (

@@ -11,6 +11,7 @@ interface NavbarProps {
 const navModules = [
   { id: 'faq', label: 'FAQ' },
   { id: 'voice', label: 'Voix' },
+  { id: 'live', label: 'Live' },
   { id: 'greetings', label: 'Salutations' },
   { id: 'settings', label: 'Paramètres' },
   { id: 'history', label: 'Historique' }

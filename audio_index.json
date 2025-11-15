@@ -1,0 +1,38 @@
+{
+  "moore": {
+    "id": "moore",
+    "path": "static/audio/moore.mp3",
+    "filename": "moore.mp3",
+    "size_bytes": 3502790,
+    "size_mb": 3.34,
+    "transcription": "Hymne national du Burkina Faso en langue Moore (Ditanyé)",
+    "langue": "moore",
+    "categorie": "hymne_national",
+    "tonalite": "solennel",
+    "description": "Version officielle de l'hymne national Le Ditanyé en Moore"
+  },
+  "dioula": {
+    "id": "dioula",
+    "path": "static/audio/dioula.mp3",
+    "filename": "dioula.mp3",
+    "size_bytes": 2941680,
+    "size_mb": 2.81,
+    "transcription": "Hymne national du Burkina Faso en langue Dioula (Faso Fasa)",
+    "langue": "dioula",
+    "categorie": "hymne_national",
+    "tonalite": "solennel",
+    "description": "Version officielle de l'hymne national Le Ditanyé en Dioula"
+  },
+  "fulfulde": {
+    "id": "fulfulde",
+    "path": "static/audio/fulfulde.mp3",
+    "filename": "fulfulde.mp3",
+    "size_bytes": 2524095,
+    "size_mb": 2.41,
+    "transcription": "Hymne national du Burkina Faso en langue Fulfulde",
+    "langue": "fulfulde",
+    "categorie": "hymne_national",
+    "tonalite": "solennel",
+    "description": "Version officielle de l'hymne national Le Ditanyé en Fulfulde"
+  }
+}

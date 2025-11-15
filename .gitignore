@@ -1,32 +1,43 @@
-# Environment variables (contient des secrets)
-.env
-
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
+*.pyd
 *.so
-.Python
-venv/
+.python-version
 env/
-ENV/
+venv/
+.venv/
 
-# IDE
-.vscode/
-.idea/
+# Logs & temps
+*.log
+*.tmp
 *.swp
-*.swo
 
-# Model files
+# Node / React
+admin-robot-ui/node_modules/
+admin-robot-ui/.vite/
+admin-robot-ui/dist/
+admin-robot-ui/.DS_Store
+
+# System junk
+.DS_Store
+Thumbs.db
+
+# Caches & virtualenv artifacts
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.pytype/
+.idea/
+.vscode/
+
+# HuggingFace / SentenceTransformer cache
+cache/
+.cache/
+
+# Binary models & archives
 *.bin
 *.gguf
-
-# Data files
-*.json
-*.index
-
-# PDFs
-pdfs/
-
-# Logs
-*.log
+*.ggml
+*.pt

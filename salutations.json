@@ -1,0 +1,465 @@
+{
+  "francais": {
+    "bonjour_matin": {
+      "text": "Bonjour !",
+      "contexte": "Matin (6h-12h)",
+      "prononciation": "bon-jour"
+    },
+    "bonjour_apres_midi": {
+      "text": "Bon après-midi !",
+      "contexte": "Après-midi (12h-18h)",
+      "prononciation": "bon a-près mi-di"
+    },
+    "bonsoir": {
+      "text": "Bonsoir !",
+      "contexte": "Soir (18h-22h)",
+      "prononciation": "bon-soir"
+    },
+    "bonne_nuit": {
+      "text": "Bonne nuit !",
+      "contexte": "Nuit (22h-6h)",
+      "prononciation": "bo-ne nuit"
+    },
+    "comment_allez_vous": {
+      "text": "Comment allez-vous ?",
+      "contexte": "Question formelle",
+      "prononciation": "ko-man ta-lé vou"
+    },
+    "comment_ca_va": {
+      "text": "Comment ça va ?",
+      "contexte": "Question informelle",
+      "prononciation": "ko-man sa va"
+    },
+    "ca_va_bien": {
+      "text": "Ça va bien, merci !",
+      "contexte": "Réponse positive",
+      "prononciation": "sa va bi-in, mèr-si"
+    },
+    "ca_va": {
+      "text": "Ça va.",
+      "contexte": "Réponse neutre",
+      "prononciation": "sa va"
+    },
+    "tres_bien": {
+      "text": "Très bien, merci !",
+      "contexte": "Réponse enthousiaste",
+      "prononciation": "trè bi-in, mèr-si"
+    },
+    "merci": {
+      "text": "Merci !",
+      "contexte": "Remerciement",
+      "prononciation": "mèr-si"
+    },
+    "merci_beaucoup": {
+      "text": "Merci beaucoup !",
+      "contexte": "Remerciement fort",
+      "prononciation": "mèr-si bo-kou"
+    },
+    "de_rien": {
+      "text": "De rien !",
+      "contexte": "Réponse à merci",
+      "prononciation": "de ri-in"
+    },
+    "au_revoir": {
+      "text": "Au revoir !",
+      "contexte": "Départ",
+      "prononciation": "o re-vwar"
+    },
+    "a_bientot": {
+      "text": "À bientôt !",
+      "contexte": "Départ proche",
+      "prononciation": "a bi-in-tô"
+    },
+    "a_demain": {
+      "text": "À demain !",
+      "contexte": "Départ jusqu'au lendemain",
+      "prononciation": "a de-min"
+    },
+    "bonne_journee": {
+      "text": "Bonne journée !",
+      "contexte": "Souhait de journée",
+      "prononciation": "bo-ne jour-né"
+    },
+    "bonne_soiree": {
+      "text": "Bonne soirée !",
+      "contexte": "Souhait de soirée",
+      "prononciation": "bo-ne swa-ré"
+    },
+    "bienvenue": {
+      "text": "Bienvenue !",
+      "contexte": "Accueil d'une personne",
+      "prononciation": "bi-in-ve-nu"
+    },
+    "bienvenue_a_tous": {
+      "text": "Bienvenue à tous !",
+      "contexte": "Accueil d'un groupe",
+      "prononciation": "bi-in-ve-nu a tous"
+    },
+    "soyez_les_bienvenus": {
+      "text": "Soyez les bienvenus !",
+      "contexte": "Accueil formel",
+      "prononciation": "swa-ié lé bi-in-ve-nu"
+    },
+    "enchanté": {
+      "text": "Enchanté !",
+      "contexte": "Première rencontre",
+      "prononciation": "an-chan-té"
+    },
+    "ravi_de_vous_rencontrer": {
+      "text": "Ravi de vous rencontrer !",
+      "contexte": "Première rencontre formelle",
+      "prononciation": "ra-vi de vou ran-kon-tré"
+    },
+    "excusez_moi": {
+      "text": "Excusez-moi.",
+      "contexte": "Demande d'attention",
+      "prononciation": "èk-sku-zé mwa"
+    },
+    "pardon": {
+      "text": "Pardon.",
+      "contexte": "S'excuser",
+      "prononciation": "par-don"
+    },
+    "s_il_vous_plait": {
+      "text": "S'il vous plaît.",
+      "contexte": "Demande polie",
+      "prononciation": "sil vou plè"
+    }
+  },
+
+  "moore": {
+    "bonjour_general": {
+      "text": "Yibéogo !",
+      "contexte": "Salutation générale",
+      "prononciation": "yi-bé-o-go",
+      "variantes": ["Ney Yibéogo !"]
+    },
+    "bonjour_matin": {
+      "text": "A ni sɔ̀gɔma !",
+      "contexte": "Bonjour le matin",
+      "prononciation": "a ni sɔ-gɔ-ma"
+    },
+    "bonjour_midi": {
+      "text": "A ni tlé !",
+      "contexte": "Bonjour à midi",
+      "prononciation": "a ni tlé"
+    },
+    "bonjour_apres_midi": {
+      "text": "A nou laa !",
+      "contexte": "Bonjour l'après-midi",
+      "prononciation": "a nou la"
+    },
+    "bonsoir": {
+      "text": "A ni zaabre !",
+      "contexte": "Bonsoir",
+      "prononciation": "a ni za-bre"
+    },
+    "bonne_nuit": {
+      "text": "I nou su !",
+      "contexte": "Bonne nuit",
+      "prononciation": "i nou sou"
+    },
+    "comment_ca_va": {
+      "text": "Kibaré ?",
+      "contexte": "Comment ça va ?",
+      "prononciation": "ki-ba-ré"
+    },
+    "ca_va": {
+      "text": "Laafi.",
+      "contexte": "Ça va (neutre)",
+      "prononciation": "la-fi"
+    },
+    "ca_va_bien": {
+      "text": "Laafi bala.",
+      "contexte": "Ça va bien",
+      "prononciation": "la-fi ba-la"
+    },
+    "tres_bien": {
+      "text": "Laafi bala wousgo !",
+      "contexte": "Très bien",
+      "prononciation": "la-fi ba-la wous-go"
+    },
+    "merci": {
+      "text": "Barka !",
+      "contexte": "Merci",
+      "prononciation": "bar-ka"
+    },
+    "merci_beaucoup": {
+      "text": "Barka wousgo !",
+      "contexte": "Merci beaucoup",
+      "prononciation": "bar-ka wous-go"
+    },
+    "au_revoir": {
+      "text": "Bilfou !",
+      "contexte": "Au revoir",
+      "prononciation": "bil-fou"
+    },
+    "bonne_journee": {
+      "text": "Yom wi a yibeoogo !",
+      "contexte": "Bonne journée",
+      "prononciation": "yom wi a yi-bé-o-go"
+    },
+    "bienvenue": {
+      "text": "Wend kãn kɛɛma !",
+      "contexte": "Bienvenue",
+      "prononciation": "wend kan kè-ma"
+    },
+    "bienvenue_a_tous": {
+      "text": "Fã wend kãn kɛɛma !",
+      "contexte": "Bienvenue à tous",
+      "prononciation": "fan wend kan kè-ma"
+    },
+    "pardon": {
+      "text": "A yi ka kõnd !",
+      "contexte": "Pardon / Excusez-moi",
+      "prononciation": "a yi ka kond"
+    },
+    "s_il_te_plait": {
+      "text": "Sẽn yaa !",
+      "contexte": "S'il te plaît",
+      "prononciation": "sen ya"
+    }
+  },
+
+  "dioula": {
+    "bonjour_general": {
+      "text": "Inché !",
+      "contexte": "Salutation générale",
+      "prononciation": "in-ché"
+    },
+    "bonjour_matin": {
+      "text": "One baali diiam !",
+      "contexte": "Bonjour le matin",
+      "prononciation": "o-né ba-li di-am"
+    },
+    "bonjour_midi": {
+      "text": "One beeti diiam !",
+      "contexte": "Bonjour entre 11h-13h",
+      "prononciation": "o-né bé-ti di-am"
+    },
+    "bonjour_apres_midi": {
+      "text": "One nyaali diiam !",
+      "contexte": "Bonjour l'après-midi",
+      "prononciation": "o-né nya-li di-am"
+    },
+    "bonsoir": {
+      "text": "One keeri diiam !",
+      "contexte": "Bonsoir",
+      "prononciation": "o-né ké-ri di-am"
+    },
+    "bonne_nuit": {
+      "text": "I ka su diiam !",
+      "contexte": "Bonne nuit",
+      "prononciation": "i ka sou di-am"
+    },
+    "comment_ca_va": {
+      "text": "Djam na ?",
+      "contexte": "Comment ça va ?",
+      "prononciation": "djam na",
+      "variantes": ["A djamo na ?"]
+    },
+    "ca_va": {
+      "text": "Djam tan.",
+      "contexte": "Ça va",
+      "prononciation": "djam tan"
+    },
+    "ca_va_bien": {
+      "text": "Djam doron tan.",
+      "contexte": "Ça va bien",
+      "prononciation": "djam do-ron tan"
+    },
+    "tres_bien": {
+      "text": "Djam doron kosobi !",
+      "contexte": "Très bien",
+      "prononciation": "djam do-ron ko-so-bi"
+    },
+    "as_tu_bien_dormi": {
+      "text": "A waali djam na ?",
+      "contexte": "As-tu bien dormi ?",
+      "prononciation": "a wa-li djam na"
+    },
+    "merci": {
+      "text": "I ni tché !",
+      "contexte": "Merci",
+      "prononciation": "i ni tché"
+    },
+    "merci_beaucoup": {
+      "text": "I ni tché kosobi !",
+      "contexte": "Merci beaucoup",
+      "prononciation": "i ni tché ko-so-bi"
+    },
+    "de_rien": {
+      "text": "Té foyi !",
+      "contexte": "De rien",
+      "prononciation": "té fo-yi"
+    },
+    "au_revoir": {
+      "text": "Kan bèn !",
+      "contexte": "Au revoir",
+      "prononciation": "kan bèn"
+    },
+    "a_demain": {
+      "text": "Kan sini !",
+      "contexte": "À demain",
+      "prononciation": "kan si-ni"
+    },
+    "bonne_journee": {
+      "text": "I ka taa tèliya kɔnɔ !",
+      "contexte": "Bonne journée",
+      "prononciation": "i ka ta tè-li-ya kɔ-nɔ"
+    },
+    "bienvenue": {
+      "text": "Bissimila !",
+      "contexte": "Bienvenue",
+      "prononciation": "bi-si-mi-la"
+    },
+    "bienvenue_a_tous": {
+      "text": "Aw bissimila bɛɛ !",
+      "contexte": "Bienvenue à tous",
+      "prononciation": "aw bi-si-mi-la bè"
+    },
+    "pardon": {
+      "text": "Hakili !",
+      "contexte": "Pardon / Excusez-moi",
+      "prononciation": "ha-ki-li"
+    },
+    "s_il_te_plait": {
+      "text": "Sabari !",
+      "contexte": "S'il te plaît",
+      "prononciation": "sa-ba-ri"
+    }
+  },
+
+  "fulfulde": {
+    "bonjour_general": {
+      "text": "Jam wali !",
+      "contexte": "Bonjour général",
+      "prononciation": "djam wa-li",
+      "variantes": ["On jaraama !"]
+    },
+    "bonjour_matin": {
+      "text": "Fii subaka !",
+      "contexte": "Bonjour le matin",
+      "prononciation": "fi sou-ba-ka"
+    },
+    "bonjour_apres_midi": {
+      "text": "Fii hiirde weeti !",
+      "contexte": "Bonjour l'après-midi",
+      "prononciation": "fi hir-de wé-ti"
+    },
+    "bonsoir": {
+      "text": "Fii hiirde !",
+      "contexte": "Bonsoir",
+      "prononciation": "fi hir-de"
+    },
+    "bonne_nuit": {
+      "text": "Jamma !",
+      "contexte": "Bonne nuit",
+      "prononciation": "dja-ma"
+    },
+    "comment_ca_va": {
+      "text": "No mbadda ?",
+      "contexte": "Comment ça va ?",
+      "prononciation": "no mba-da"
+    },
+    "ca_va": {
+      "text": "Jam tan.",
+      "contexte": "Ça va",
+      "prononciation": "djam tan"
+    },
+    "ca_va_bien": {
+      "text": "Jam e jam.",
+      "contexte": "Ça va bien",
+      "prononciation": "djam é djam"
+    },
+    "tres_bien": {
+      "text": "Jam e jam heewi !",
+      "contexte": "Très bien",
+      "prononciation": "djam é djam hé-wi"
+    },
+    "merci": {
+      "text": "Jaaraama !",
+      "contexte": "Merci",
+      "prononciation": "dja-ra-ma"
+    },
+    "merci_beaucoup": {
+      "text": "Jaaraama buri !",
+      "contexte": "Merci beaucoup",
+      "prononciation": "dja-ra-ma bou-ri"
+    },
+    "de_rien": {
+      "text": "Alaa ko waawi !",
+      "contexte": "De rien",
+      "prononciation": "a-la ko wa-wi"
+    },
+    "au_revoir": {
+      "text": "Fof ma yaaf on !",
+      "contexte": "Au revoir",
+      "prononciation": "fof ma yaf on"
+    },
+    "a_bientot": {
+      "text": "Haa nde jokkondirta !",
+      "contexte": "À bientôt",
+      "prononciation": "ha ndé djo-kon-dir-ta"
+    },
+    "bonne_journee": {
+      "text": "Ñalnde e jam !",
+      "contexte": "Bonne journée",
+      "prononciation": "nyal-ndé é djam"
+    },
+    "bon_voyage": {
+      "text": "Yah e jam !",
+      "contexte": "Bon voyage",
+      "prononciation": "yah é djam"
+    },
+    "bienvenue": {
+      "text": "On jaraama e mbi !",
+      "contexte": "Bienvenue (tu es le bienvenu)",
+      "prononciation": "on dja-ra-ma é mbi"
+    },
+    "bienvenue_a_tous": {
+      "text": "On jaraama e on !",
+      "contexte": "Bienvenue à tous",
+      "prononciation": "on dja-ra-ma é on"
+    },
+    "soyez_les_bienvenus": {
+      "text": "Fii jaraama e on !",
+      "contexte": "Soyez les bienvenus",
+      "prononciation": "fi dja-ra-ma é on"
+    },
+    "pardon": {
+      "text": "Yaafu !",
+      "contexte": "Pardon / Excusez-moi",
+      "prononciation": "ya-fou"
+    },
+    "s_il_te_plait": {
+      "text": "Minneeɗo !",
+      "contexte": "S'il te plaît",
+      "prononciation": "mi-né-do"
+    }
+  },
+
+  "notes_culturelles": {
+    "moore": {
+      "info": "Le mooré est la langue parlée par les Mossi, le plus grand groupe ethnique du Burkina Faso. Les salutations sont très importantes et peuvent être prolongées.",
+      "conseil": "Toujours demander des nouvelles de la famille après la salutation initiale."
+    },
+    "dioula": {
+      "info": "Le dioula est une langue mandingue parlée dans l'ouest du Burkina Faso et dans plusieurs pays d'Afrique de l'Ouest.",
+      "conseil": "Les salutations varient selon le moment de la journée. Il est important d'utiliser la bonne formule."
+    },
+    "fulfulde": {
+      "info": "Le fulfulde (ou peul) est parlé par les Peuls au Burkina Faso, principalement dans le nord et le Sahel.",
+      "conseil": "Le respect et la courtoisie sont primordiaux. Utiliser 'On jaraama' montre un grand respect."
+    }
+  },
+
+  "metadata": {
+    "version": "1.0",
+    "date_creation": "2025-11-13",
+    "langues_supportees": ["francais", "moore", "dioula", "fulfulde"],
+    "nombre_expressions_total": 88,
+    "usage": "Fichier de référence pour les salutations multilingues du Burkina Faso",
+    "source": "Compilation basée sur local_knowledge.py avec ajouts et corrections"
+  }
+}

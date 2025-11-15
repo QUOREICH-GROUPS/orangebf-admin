@@ -1,0 +1,219 @@
+.live-chat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chatgpthero {
+  padding: clamp(16px, 3vw, 32px);
+  border: 1px solid rgba(255, 121, 0, 0.2);
+  border-radius: 18px;
+  background: linear-gradient(125deg, rgba(255, 121, 0, 0.15), rgba(12, 18, 32, 0.95));
+  margin-bottom: 8px;
+}
+
+.chatgpthero .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 121, 0, 0.4);
+  color: var(--orange);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.chatgpthero h2 {
+  margin: 0;
+  color: var(--orange);
+}
+
+.chatgpthero p {
+  margin: 4px 0 16px;
+  color: var(--text);
+}
+
+.chatgpthero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chatgpthero .hero-actions select,
+.chatgpthero .hero-actions button {
+  flex: 1;
+  min-width: 150px;
+}
+
+.live-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: clamp(420px, 70vh, 680px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f1423;
+}
+
+.live-header {
+  padding: 16px 20px;
+  background: rgba(255, 121, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 121, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.live-header h3 {
+  margin: 0;
+  color: var(--orange);
+}
+
+.live-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95));
+}
+
+.live-composer {
+  border-top: 1px solid var(--border);
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.95);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.chat-bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: min(85%, 640px);
+  line-height: 1.4;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.chat-bubble small {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: linear-gradient(120deg, rgba(255, 121, 0, 0.3), rgba(255, 121, 0, 0.45));
+  border: 1px solid rgba(255, 121, 0, 0.6);
+}
+
+.chat-bubble.assistant {
+  align-self: flex-start;
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.live-composer textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  min-height: 80px;
+}
+
+.composer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.composer-actions button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.send-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(120deg, var(--orange), var(--orange-dark));
+  color: #111;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.audio-player {
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .live-wrapper {
+    height: 60vh;
+  }
+
+  .chat-bubble {
+  max-width: 100%;
+  }
+}
+
+.live-wrapper.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  border-radius: 0;
+  border: none;
+}
+
+.live-wrapper.fullscreen .live-header {
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.live-wrapper.fullscreen .live-messages {
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.live-wrapper.fullscreen .live-composer {
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.live-chat-locked {
+  overflow: hidden;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 121, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.header-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.empty-state {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+}
