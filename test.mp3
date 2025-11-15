@@ -1,0 +1,1 @@
+{"detail":"Erreur Google Cloud TTS: Cloud Text-to-Speech API has not been used in project 934126100792 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/texttospeech.googleapis.com/overview?project=934126100792 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."}

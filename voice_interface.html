@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Voice Assistant - Test Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FF7900 0%, #FF5000 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #FF7900;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: #FF7900;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #FF7900;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            background: white;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background: #FF7900;
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #FF5000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 121, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #45a049;
+        }
+
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: #da190b;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .recording {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .status {
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 15px;
+            background: #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .file-input-label:hover {
+            background: #d0d0d0;
+        }
+
+        .file-name {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .timer {
+            font-size: 24px;
+            text-align: center;
+            color: #f44336;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎙️ Orange Voice Assistant</h1>
+            <p class="subtitle">Interface de test des fonctionnalités vocales</p>
+        </header>
+
+        <div class="grid">
+            <!-- Card 1: Text-to-Speech -->
+            <div class="card">
+                <h2>🔊 Synthèse Vocale (TTS)</h2>
+                <textarea id="ttsText" placeholder="Tapez votre texte ici...">Bonjour, bienvenue chez Orange Burkina Faso. Comment puis-je vous aider aujourd'hui?</textarea>
+
+                <label for="voiceSelect" style="display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold;">Voix :</label>
+                <select id="voiceSelect">
+                    <optgroup label="Voix Masculines">
+                        <option value="fr-FR-HenriNeural" selected>Henri (Masculine - Professionnel)</option>
+                        <option value="fr-FR-AlainNeural">Alain (Masculine - Doux)</option>
+                        <option value="fr-FR-ClaudeNeural">Claude (Masculine - Naturel)</option>
+                    </optgroup>
+                    <optgroup label="Voix Féminines">
+                        <option value="fr-FR-DeniseNeural">Denise (Féminine - Claire)</option>
+                        <option value="fr-FR-EloiseNeural">Eloise (Féminine - Douce)</option>
+                        <option value="fr-FR-BrigitteNeural">Brigitte (Féminine - Dynamique)</option>
+                    </optgroup>
+                </select>
+
+                <button class="btn-primary" onclick="textToSpeech()">Générer Audio</button>
+
+                <div id="ttsStatus"></div>
+                <audio id="ttsAudio" controls class="hidden"></audio>
+            </div>
+
+            <!-- Card 2: Voice Chat -->
+            <div class="card">
+                <h2>💬 Chat Vocal Complet</h2>
+                <p style="margin-bottom: 15px; color: #666;">Enregistrez votre question vocale et recevez une réponse audio du chatbot.</p>
+
+                <div class="timer hidden" id="recordTimer">00:00</div>
+
+                <button class="btn-secondary" id="recordBtn" onclick="startRecording()">
+                    🎤 Enregistrer Question
+                </button>
+                <button class="btn-danger hidden" id="stopBtn" onclick="stopRecording()">
+                    ⏹️ Arrêter
+                </button>
+
+                <audio id="recordedAudio" controls class="hidden"></audio>
+
+                <button class="btn-primary hidden" id="sendVoiceBtn" onclick="sendVoiceChat()">
+                    📤 Envoyer au Chatbot
+                </button>
+
+                <div id="voiceChatStatus"></div>
+                <audio id="voiceChatResponse" controls class="hidden"></audio>
+            </div>
+
+            <!-- Card 3: Speech-to-Text -->
+            <div class="card">
+                <h2>🎤 Transcription Audio (STT)</h2>
+                <p style="margin-bottom: 15px; color: #666;">Uploadez un fichier audio pour le transcrire en texte.</p>
+
+                <div class="file-input-wrapper">
+                    <input type="file" id="audioFile" accept="audio/*" onchange="updateFileName(this)">
+                    <label for="audioFile" class="file-input-label">
+                        📁 Choisir un fichier audio
+                    </label>
+                </div>
+                <div class="file-name" id="fileName"></div>
+
+                <button class="btn-primary" onclick="transcribeAudio()">Transcrire</button>
+
+                <div id="sttStatus"></div>
+            </div>
+
+            <!-- Card 4: Text Question -->
+            <div class="card">
+                <h2>📝 Question Texte (RAG)</h2>
+                <textarea id="questionText" placeholder="Posez votre question...">Comment activer Orange Money?</textarea>
+
+                <button class="btn-primary" onclick="askQuestion()">Envoyer Question</button>
+
+                <div id="questionStatus"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Développé avec ❤️ pour Orange Burkina Faso | Groq Whisper + Edge-TTS (100% Gratuit)</p>
+        </footer>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+        let mediaRecorder;
+        let audioChunks = [];
+        let recordingTimer;
+        let recordingSeconds = 0;
+
+        // Text-to-Speech
+        async function textToSpeech() {
+            const text = document.getElementById('ttsText').value;
+            const voice = document.getElementById('voiceSelect').value;
+            const statusDiv = document.getElementById('ttsStatus');
+            const audio = document.getElementById('ttsAudio');
+
+            if (!text.trim()) {
+                showStatus(statusDiv, 'Veuillez entrer du texte', 'error');
+                return;
+            }
+
+            showStatus(statusDiv, 'Génération audio en cours...', 'info');
+
+            try {
+                const response = await fetch(`${API_URL}/speak`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, voice })
+                });
+
+                if (!response.ok) throw new Error('Erreur serveur');
+
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+
+                audio.src = url;
+                audio.classList.remove('hidden');
+                showStatus(statusDiv, '✅ Audio généré avec succès !', 'success');
+            } catch (error) {
+                showStatus(statusDiv, `❌ Erreur: ${error.message}`, 'error');
+            }
+        }
+
+        // Recording
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+                recordingSeconds = 0;
+
+                mediaRecorder.ondataavailable = (e) => audioChunks.push(e.data);
+
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                    const url = URL.createObjectURL(blob);
+
+                    const recordedAudio = document.getElementById('recordedAudio');
+                    recordedAudio.src = url;
+                    recordedAudio.classList.remove('hidden');
+
+                    document.getElementById('sendVoiceBtn').classList.remove('hidden');
+                    document.getElementById('recordTimer').classList.add('hidden');
+
+                    // Stop all tracks
+                    stream.getTracks().forEach(track => track.stop());
+                };
+
+                mediaRecorder.start();
+
+                document.getElementById('recordBtn').classList.add('hidden');
+                document.getElementById('stopBtn').classList.remove('hidden');
+                document.getElementById('stopBtn').classList.add('recording');
+                document.getElementById('recordTimer').classList.remove('hidden');
+
+                // Start timer
+                recordingTimer = setInterval(() => {
+                    recordingSeconds++;
+                    const mins = Math.floor(recordingSeconds / 60).toString().padStart(2, '0');
+                    const secs = (recordingSeconds % 60).toString().padStart(2, '0');
+                    document.getElementById('recordTimer').textContent = `${mins}:${secs}`;
+                }, 1000);
+
+            } catch (error) {
+                showStatus(document.getElementById('voiceChatStatus'),
+                    '❌ Erreur microphone: ' + error.message, 'error');
+            }
+        }
+
+        function stopRecording() {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+                clearInterval(recordingTimer);
+
+                document.getElementById('recordBtn').classList.remove('hidden');
+                document.getElementById('stopBtn').classList.add('hidden');
+                document.getElementById('stopBtn').classList.remove('recording');
+            }
+        }
+
+        async function sendVoiceChat() {
+            const blob = new Blob(audioChunks, { type: 'audio/webm' });
+            const formData = new FormData();
+            formData.append('file', blob, 'question.webm');
+
+            const statusDiv = document.getElementById('voiceChatStatus');
+            const responseAudio = document.getElementById('voiceChatResponse');
+
+            showStatus(statusDiv, '🤖 Traitement en cours (transcription + RAG + TTS)...', 'info');
+
+            try {
+                const response = await fetch(`${API_URL}/voice-chat`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error('Erreur serveur');
+
+                const question = response.headers.get('X-Question-Text');
+                const answerPreview = response.headers.get('X-Response-Text');
+
+                const audioBlob = await response.blob();
+                const url = URL.createObjectURL(audioBlob);
+
+                responseAudio.src = url;
+                responseAudio.classList.remove('hidden');
+
+                showStatus(statusDiv,
+                    `✅ Réponse reçue !<br><strong>Votre question :</strong> ${question}<br><strong>Début de réponse :</strong> ${answerPreview}...`,
+                    'success');
+            } catch (error) {
+                showStatus(statusDiv, `❌ Erreur: ${error.message}`, 'error');
+            }
+        }
+
+        // Speech-to-Text
+        async function transcribeAudio() {
+            const fileInput = document.getElementById('audioFile');
+            const statusDiv = document.getElementById('sttStatus');
+
+            if (!fileInput.files.length) {
+                showStatus(statusDiv, 'Veuillez sélectionner un fichier audio', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            showStatus(statusDiv, '🎤 Transcription en cours...', 'info');
+
+            try {
+                const response = await fetch(`${API_URL}/transcribe`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error('Erreur serveur');
+
+                const data = await response.json();
+                showStatus(statusDiv,
+                    `✅ Transcription réussie !<br><strong>Texte :</strong> ${data.text}`,
+                    'success');
+            } catch (error) {
+                showStatus(statusDiv, `❌ Erreur: ${error.message}`, 'error');
+            }
+        }
+
+        // Text Question
+        async function askQuestion() {
+            const question = document.getElementById('questionText').value;
+            const statusDiv = document.getElementById('questionStatus');
+
+            if (!question.trim()) {
+                showStatus(statusDiv, 'Veuillez entrer une question', 'error');
+                return;
+            }
+
+            showStatus(statusDiv, '🔍 Recherche en cours...', 'info');
+
+            try {
+                const response = await fetch(`${API_URL}/ask`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question })
+                });
+
+                if (!response.ok) throw new Error('Erreur serveur');
+
+                const data = await response.json();
+                showStatus(statusDiv,
+                    `✅ Réponse reçue !<br><strong>Réponse :</strong> ${data.response}`,
+                    'success');
+            } catch (error) {
+                showStatus(statusDiv, `❌ Erreur: ${error.message}`, 'error');
+            }
+        }
+
+        // Utilities
+        function showStatus(element, message, type) {
+            element.className = `status ${type}`;
+            element.innerHTML = message;
+            element.classList.remove('hidden');
+        }
+
+        function updateFileName(input) {
+            const fileName = input.files[0]?.name || '';
+            document.getElementById('fileName').textContent = fileName ? `📄 ${fileName}` : '';
+        }
+    </script>
+</body>
+</html>

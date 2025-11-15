@@ -1,0 +1,32 @@
+# Environment variables (contient des secrets)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Model files
+*.bin
+*.gguf
+
+# Data files
+*.json
+*.index
+
+# PDFs
+pdfs/
+
+# Logs
+*.log

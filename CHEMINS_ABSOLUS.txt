@@ -1,0 +1,169 @@
+CHEMINS ABSOLUS COMPLETS DU PROJET
+===================================
+
+BASE DIRECTORY
+==============
+/home/suprox/Projet/Laravel/ai/orangebf/
+
+FICHIERS RAG SERVERS (6)
+========================
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/rag_server_gpt4all.py          [18 KB, 504 lignes] - SERVEUR ACTIF
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/rag_server_voice.py            [33 KB, 981 lignes] - Vocal complet
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/rag_server_openai.py           [2.7 KB, 87 lignes]  - Simple OpenAI
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/rag_server_claude.py           [2.7 KB, 84 lignes]  - Simple Claude
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/rag_server_pi.py               [4 KB, 100+ lignes]  - Pi5 optimisé
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/rag_server_tts.py              [9.7 KB, 250+ lignes] - TTS expérimental
+
+TRAITEMENT DE DONNÉES
+======================
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/clean_orange.py                [1.5 KB, 53 lignes]
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/clean_orange_v2.py             [5.9 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/create_embeddings.py           [1.2 KB, 39 lignes]
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/create_embeddings_v2.py        [3.5 KB, 103 lignes]
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/local_knowledge.py             [5.6 KB]
+
+ELASTICSEARCH (OPTIONNEL)
+=========================
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/elasticsearch_manager.py       [3.2 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/index_data.py                  [2.7 KB, 71 lignes] (DANGER: credentials)
+
+UTILITAIRES
+===========
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/search_faq.py                  [2.5 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/service_decoupe.py             [728 B]
+
+CONFIGURATION SCRAPY
+====================
+/home/suprox/Projet/Laravel/ai/orangebf/scrapy.cfg                                     [80 B]
+/home/suprox/Projet/Laravel/ai/orangebf/orange_scraper/settings.py                     [388 B]
+/home/suprox/Projet/Laravel/ai/orangebf/orange_scraper/spiders/orange_services_spider.py [60 lignes]
+
+DONNÉES BRUTES (INPUTS)
+=======================
+/home/suprox/Projet/Laravel/ai/orangebf/orange_services.json                           [475 KB] - Brut Scrapy
+/home/suprox/Projet/Laravel/ai/orangebf/orange_services_paragraphs.json                [735 KB] - Paragraphes
+
+DONNÉES TRAITÉES
+================
+/home/suprox/Projet/Laravel/ai/orangebf/orange_services_clean.json                     [473 KB] - v1
+/home/suprox/Projet/Laravel/ai/orangebf/orange_services_clean_v2.json                  [269 KB] - v2
+
+INDEXES FAISS (2 versions)
+==========================
+/home/suprox/Projet/Laravel/ai/orangebf/orange_faq.index                               [3.6 MB] - v1 (1400 vecteurs)
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/orange_faq_v2.index            [2.3 MB] - v2 (850 vecteurs)
+
+MÉTADONNÉES (TEXTES)
+====================
+/home/suprox/Projet/Laravel/ai/orangebf/metadata.json                                  [460 KB] - v1
+/home/suprox/Projet/Laravel/ai/orangebf/metadata_v2.json                               [121 KB] - v2
+/home/suprox/Projet/Laravel/ai/orangebf/data_processing/metadata_v2.json               [121 KB] - Copie v2
+
+CONNAISSANCES LOCALES
+======================
+/home/suprox/Projet/Laravel/ai/orangebf/salutations.json                               [13 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/audio_index.json                               [1.2 KB]
+
+CONFIGURATION ET SECRETS
+========================
+/home/suprox/Projet/Laravel/ai/orangebf/.env                                           [375 B] - CONTIENT SECRETS!
+/home/suprox/Projet/Laravel/ai/orangebf/.env.example                                   [165 B] - Template
+/home/suprox/Projet/Laravel/ai/orangebf/.gitignore                                     [245 B]
+
+MODÈLES LLM (9.3 GB TOTAL)
+===========================
+/home/suprox/Projet/Laravel/ai/orangebf/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf           [669 MB]
+/home/suprox/Projet/Laravel/ai/orangebf/Llama-3.2-1B-Instruct-Q4_K_M.gguf             [808 MB]
+/home/suprox/Projet/Laravel/ai/orangebf/Phi-3-mini-4k-instruct-q4.gguf                [2.4 GB]
+/home/suprox/Projet/Laravel/ai/orangebf/orca-mini-3b-gguf2-q4_0.gguf                  [1.98 GB]
+/home/suprox/Projet/Laravel/ai/orangebf/ggml-gpt4all-j-v1.3-groovy.bin                [3.8 GB]
+
+PIPER TTS
+=========
+/home/suprox/Projet/Laravel/ai/orangebf/piper_bin/piper                                [Exécutable]
+/home/suprox/Projet/Laravel/ai/orangebf/piper_bin/espeak-ng-data/                      [Dossier]
+/home/suprox/Projet/Laravel/ai/orangebf/piper_models/fr_FR-siwis-medium.onnx.json      [4.8 KB]
+
+INTERFACES
+==========
+/home/suprox/Projet/Laravel/ai/orangebf/voice_interface.html                           [17 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/test_voice.html                                [5.2 KB]
+
+FICHIERS STATIQUES
+==================
+/home/suprox/Projet/Laravel/ai/orangebf/static/audio/                                  [Cache audio]
+/home/suprox/Projet/Laravel/ai/orangebf/static/tts_cache/                              [Cache TTS]
+/home/suprox/Projet/Laravel/ai/orangebf/pdfs/                                          [PDFs crawlés]
+
+VIRTUALENV
+==========
+/home/suprox/Projet/Laravel/ai/orangebf/venv/                                          [Python 3.11]
+
+DOCUMENTATION
+==============
+/home/suprox/Projet/Laravel/ai/orangebf/CLAUDE.md                                      [5.2 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/GEMINI.md                                      [5 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/AUDIT_COMPLET_ET_AMELIORATIONS.md              [18.6 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/AMELIORATIONS_COMPLETES_V2.md                  [14.1 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/GROQ_MIGRATION_SUCCESS.md                      [7.2 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/IMPLEMENTATION_AUDIO_SYSTEM.md                 [13.5 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/RASPBERRY_PI_SETUP.md                          [9.6 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/STT_SETUP.md                                   [15.1 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/TTS_SETUP.md                                   [10.9 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/TTS_SUMMARY.md                                 [8.4 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/UPGRADE_STATUS.md                              [5.5 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/VOICE_ASSISTANT_SUMMARY.md                     [16.4 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/VOICE_FEATURES.md                              [8.4 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/PI5_QUICK_START.md                             [6.6 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/SOLUTION_COMPARISON.md                         [6.3 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/RAPPORT_AUDIT_COMPATIBILITE_PI5.md             [11.7 KB]
+
+FICHIERS GÉNÉRÉS / TEMPORAIRES
+===============================
+/home/suprox/Projet/Laravel/ai/orangebf/test_henri.mp3                                 [43 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/reponse.mp3                                    [16.4 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/question1.wav                                  [70 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/question2.wav                                  [99 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/test_api_piper.wav                             [30 B]
+/home/suprox/Projet/Laravel/ai/orangebf/test_dioula.wav                                [126 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/test_espeak_fr.wav                             [188 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/test_piper_voice.wav                           [148 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/test.mp3                                       [376 B]
+
+AUTRES FICHIERS
+===============
+/home/suprox/Projet/Laravel/ai/orangebf/access_info.txt                                [1.6 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/llama_download.log                             [1.2 MB]
+/home/suprox/Projet/Laravel/ai/orangebf/qr_code_api.png                                [560 B]
+/home/suprox/Projet/Laravel/ai/orangebf/qr_code_web.png                                [575 B]
+/home/suprox/Projet/Laravel/ai/orangebf/q                                              [876 B]
+/home/suprox/Projet/Laravel/ai/orangebf/install_quality_upgrade.sh                     [3.1 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/setup_pi5.sh                                   [7.5 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/create_audio_index.py                          [3.8 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/generate_qr.py                                 [2.4 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/test_tts.py                                    [7.5 KB]
+/home/suprox/Projet/Laurent/ai/orangebf/test_voice_api.py                              [6.6 KB]
+/home/suprox/Projet/Laravel/ai/orangebf/Politique anticorruption Orange Burkina Faso.pdf [404 KB]
+
+RÉSUMÉ STATISTIQUES
+===================
+Total Répertoire: ~15 GB (majoritairement modèles LLM)
+Fichiers Python: ~20 (serveurs + utilitaires)
+Données: ~2.5 GB
+Modèles: ~9.3 GB
+Documentation: ~100+ KB
+Fichiers temporaires: ~500+ KB
+
+Serveurs RAG: 6
+Versions embeddings: 2 (v1 et v2)
+Indexes FAISS: 2
+Métadonnées JSON: 2
+Configurations: Eparpillées (3-4 endroits)
+
+FICHIERS À SUPPRIMER (REDONDANTS)
+==================================
+/home/suprox/Projet/Laravel/ai/orangebf/orca-mini-3b-gguf2-q4_0.gguf                  (1.98 GB) - Dépréciée
+/home/suprox/Projet/Laravel/ai/orangebf/ggml-gpt4all-j-v1.3-groovy.bin                (3.8 GB) - Très ancien
+/home/suprox/Projet/Laravel/ai/orangebf/test_*.{wav,mp3}                               (~500 KB)
+/home/suprox/Projet/Laravel/ai/orangebf/question*.wav                                  (~170 KB)
+
