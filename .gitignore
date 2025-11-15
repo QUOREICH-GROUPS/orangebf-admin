@@ -41,3 +41,5 @@ cache/
 *.gguf
 *.ggml
 *.pt
+# Docs non versionnés
+GUIDE_CONFIGURATION.md
